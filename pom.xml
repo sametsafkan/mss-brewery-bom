@@ -13,9 +13,29 @@
     <artifactId>mss-brewery-bom</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl.txt</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Mss Brewery</name>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>M. Samet Safkan</name>
+            <organization></organization>
+        </developer>
+    </developers>
+
     <properties>
         <java.version>14</java.version>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
+        <jaxb.version>2.3.0</jaxb.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -60,6 +80,21 @@
             <version>${mapstruct.version}</version>
         </dependency>
         <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -75,6 +110,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
